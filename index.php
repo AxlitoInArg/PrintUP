@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($row['Contrasena'] == $Contrasena) {
             // Contraseña correcta, iniciar sesión
             $_SESSION['email'] = $Email;
+            $_SESSION['nombre_usuario'] = $row['Nombres'];
             header("Location: inicio/inicio.php");
             exit;
         } else {

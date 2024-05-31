@@ -65,7 +65,7 @@ body, html {
 }
 
 .footer {
-    margin-bottom: 20px;
+    margin-bottom: 0%;
     text-align: center;
 }
 
@@ -99,13 +99,21 @@ body, html {
     .login-form input[type="text"],
     .login-form input[type="password"],
     .login-form button {
-        font-size: 14px;
+        font-size: 20px;
+        width: 100%;
         padding: 10px;
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .login-form .forgot-password,
     .footer .register {
-        font-size: 14px;
+        font-size: 20px;
+        margin-bottom: 50%; /* Add margin to avoid space at the bottom */
+    }
+    
+    .footer {
+        padding: 60px;
+        font: 20px;
     }
 }

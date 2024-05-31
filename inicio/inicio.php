@@ -58,7 +58,7 @@ if(isset($_SESSION['nombre_usuario'])) {
 
     <div class="navbar">
         <a href="inicio.php" data-label="Inicio"><i class="fas fa-home"></i> Inicio</a>
-        <a href="historial.php" data-label="Historial"><i class="fas fa-history"></i> Historial</a>
+        <a href="../historial/historial.php" data-label="Historial"><i class="fas fa-history"></i> Historial</a>
         <a href="configuracion.php" data-label="Configuración"><i class="fas fa-cog"></i> Configuración</a>
         <a href="perfil.php" data-label="Perfil"><i class="fas fa-user"></i> Perfil</a>
         <a href="nueva-impresion.php" data-label="Nueva Impresión"><i class="fas fa-book"></i> Nueva Impresión</a>

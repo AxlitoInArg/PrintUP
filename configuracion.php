@@ -36,7 +36,7 @@ if (isset($_SESSION['nombre_usuario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/icono.png" type="image/x-icon">
-    <title>Página de Inicio - PrintUP</title>
+    <title>Página de configuraciones - PrintUP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/global.css">
@@ -44,21 +44,6 @@ if (isset($_SESSION['nombre_usuario'])) {
 </head>
 
 <body>
-    <main>
-        <div class="quisqueros_chats">
-            Quisqueros
-        </div>
-        <div class="chat">
-            <img src="https://media.minutouno.com/p/3a9e87392bd57010dd861992a41463f2/adjuntos/150/imagenes/026/179/0026179410/610x0/smart/juan-carlos.png" alt="" class="chat__img">
-            <div class="chat_container">
-                <div>
-                    <span class="chat_container_name">Natalia Natalia</span>
-                    <span class="chat_container_date">12:21p.m</span>
-                </div>
-                <div class="chat_container_mensagge">Porque perdi el dni</div>
-            </div>
-        </div>
-    </main>
     <?php include "./componets/navbar.php" ?>
 </body>
 

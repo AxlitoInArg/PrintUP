@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/icono.png" type="image/x-icon">
+    <link rel="icon" href="/img/icono.png" type="image/x-icon">
     <link rel="icon" href="/callnex/imgs/logo.png" type="image/x-icon">
     <title>Login - CallNex</title>
     <link rel="stylesheet" href="/callnex/css/login.css">
 </head>
+
 <body>
     <?php
     session_start();
 
-    // Datos de conexión a la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "printup";
+    include "./libs/conn.php";
 
-    // Conexión a la base de datos
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    if (!$conn) {
-        die("Conexión fallida: " . mysqli_connect_error());
-    }
 
     // Inicializar variables para manejar mensajes
     $login_success = false;
@@ -50,14 +43,14 @@
 
     <div class="login-container">
         <h2>Redirigiendo</h2>
-        <?php if ($login_success): ?>
+        <?php if ($login_success) : ?>
             <p class="success-message">Inicio de sesión exitoso. Redirigiendo...</p>
             <script>
                 setTimeout(function() {
                     window.location.href = '/callnex/php/inicio.php'; // Cambiar a la página de inicio correspondiente
                 }, 3000); // Redirigir después de 3 segundos
             </script>
-        <?php else: ?>
+        <?php else : ?>
             <p class="error-message">ERROR, VOLVIENDO AL LOGUEO</p>
             <script>
                 setTimeout(function() {
@@ -68,4 +61,5 @@
     </div>
 
 </body>
+
 </html>

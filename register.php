@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles_registro.css">
+    <link rel="icon" href="img/icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/register.css">
     <title>Registro - PrintUP</title>
 </head>
+
 <body>
-<?php
+    <?php
     // Verificar si se ha enviado el formulario
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Procesar los datos del formulario
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "printup";
-
-        $conn = mysqli_connect($servername, $username, $password, $database);
-
-        if (!$conn) {
-            die("Conexión fallida: " . mysqli_connect_error());
-        }
+        include "./libs/conn.php";
 
         $DNI_Usuario = $_POST["DNI"];
         $Nombres = $_POST["nombre_Usuario"]; // Cambiado de "Nombres" a "nombre_Usuario"
@@ -50,10 +44,10 @@
         }
         mysqli_close($conn);
     }
-?>
+    ?>
 
-<header class="header">
-        <img src="../img/logo.png" alt="PrintUP Logo" class="logo">
+    <header class="header">
+        <img src="img/logo.png" alt="PrintUP Logo" class="logo">
     </header>
     <main class="login-form">
         <form action="" method="POST">
@@ -74,7 +68,8 @@
         </form>
     </main>
     <footer class="footer">
-        <a href="../index.php" class="index">atrás</a>
-        </footer>
+        <a href="login.php" class="index">atrás</a>
+    </footer>
 </body>
+
 </html>

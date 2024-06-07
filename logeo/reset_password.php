@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/icono.png" type="image/x-icon">
+    <link rel="icon" href="/img/icono.png" type="image/x-icon">
     <title>Restablecer Contraseña - PrintUP</title>
     <link rel="stylesheet" href="recuperacion.css">
 </head>

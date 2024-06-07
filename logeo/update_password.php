@@ -9,16 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "printup";
-
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+    include "./libs/conn.php";
 
     $sql = "SELECT * FROM password_resets WHERE token = ? AND expires >= ?";
     $stmt = $conn->prepare($sql);

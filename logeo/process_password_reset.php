@@ -1,17 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include "./libs/conn.php";
+
     $email = $_POST["email"];
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "printup";
-
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
 
     $query = "SELECT * FROM usuarios WHERE Email = ?";
     $stmt = $conn->prepare($query);
@@ -32,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $subject = "Recuperación de Contraseña - PrintUP";
             $message = "Haz clic en el siguiente enlace para restablecer tu contraseña: $resetLink";
             $headers = "From: printup.t1vl@gmail.com";
-    
+
             // Enviar el correo electrónico
             mail($email, $subject, $message, $headers);
 

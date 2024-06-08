@@ -33,11 +33,22 @@
             echo "<p class='error'>El correo electrónico, DNI o teléfono ya están registrados.</p>";
         } else {
             // Insertar nuevo usuario en la base de datos
-            $sql_insert = "INSERT INTO usuarios (DNI_Usuario, Nombres, Apellidos, Edad, Email, Telefono, Contrasena) VALUES ('$DNI_Usuario','$Nombres','$Apellidos', '$Edad', '$Mail', '$Telefono', '$Contrasena')";
+            $sql_insert = "INSERT INTO usuarios (DNI_Usuario, Nombres, Apellidos, Edad, Email, Telefono, Contrasena) VALUES ('$DNI_Usuario','$Nombres','$Apellidos', '$Edad', '$Mail', '$Telefono', '$Contrasena');";
+
             if (mysqli_query($conn, $sql_insert)) {
-                // Redirigir al usuario a la página de inicio
-                header("Location: ../inicio/inicio.php");
-                exit; // Finalizar el script para evitar cualquier salida adicional
+
+                if (isset($_POST['registrar_alumno']) && $_POST['registrar_alumno'] == "on") {
+                    $Curso = $_POST["curso"];
+                    $Preceptor = $_POST["preceptor"];
+                    $sql_insert = "INSERT INTO alumnos (FK_DNI_Usuario, Curso, Preceptor) VALUES ('$DNI_Usuario','$Curso','$Preceptor');";
+
+                    if (mysqli_query($conn, $sql_insert)) {
+                        // Redirigir al usuario a la página de inicio
+                        header("Location: /login.php");
+                        exit; // Finalizar el script para evitar cualquier salida adicional
+                    } else {
+                    }
+                }
             } else {
                 echo "Error en la consulta SQL: " . mysqli_error($conn);
             }
@@ -51,25 +62,39 @@
     </header>
     <main class="login-form">
         <form action="" method="POST">
-            <label for="opciones">Selecciona una opción:</label>
-            <select id="opciones" name="opciones">
-                <option value="opcion1">seleccione</option>
-                <option name value="opcion2">Alumno</option>
-                <option value="opcion4">profesor</option>
-            </select>
-            <input type="text" placeholder="DNI" required name="DNI" id="DNI">
+            <input type="number" placeholder="DNI" required name="DNI" id="DNI">
             <input type="text" placeholder="Nombre de Usuario" required name="nombre_Usuario" id="nombre_Usuario"> <!-- Corregido de "Nombres" a "nombre_Usuario" -->
             <input type="text" placeholder="Apellido" required name="apellido" id="apellido"> <!-- Corregido de "Apellidos" a "apellido" -->
             <input type="text" placeholder="Edad" required name="edad" id="edad"> <!-- Corregido de "Edad" a "edad" -->
-            <input type="text" placeholder="Gmail" required name="Gmail" id="Gmail"> <!-- Corregido de "Email" a "Gmail" y cambiado a tipo "email" -->
-            <input type="text" placeholder="Teléfono" required name="telefono" id="telefono"> <!-- Cambiado a tipo "tel" -->
+            <input type="email" placeholder="Gmail" required name="Gmail" id="Gmail"> <!-- Corregido de "Email" a "Gmail" y cambiado a tipo "email" -->
+            <input type="tel" placeholder="Teléfono" required name="telefono" id="telefono"> <!-- Cambiado a tipo "tel" -->
             <input type="password" placeholder="Contraseña" required name="contrasena" id="contrasena"> <!-- Corregido de "Contrasena" a "contrasena" -->
+            <label for="register_alumno">
+                <input type="checkbox" placeholder="Contraseña" name="registrar_alumno" id="register_alumno"> <!-- Corregido de "Contrasena" a "contrasena" -->
+                Registrarse como alumno
+            </label>
+            <select id="opciones" name="curso" disabled>
+                <option name value="1ro 2da">1ro 2da</option>
+                <option value="7mo 2da">7mo 2da</option>
+            </select>
+            <select id="opciones" name="preceptor" disabled>
+                <option name value="Alejandro Manrique">Alejandro Manrique</option>
+            </select>
             <button type="submit">Registrarse</button>
         </form>
     </main>
     <footer class="footer">
-        <a href="login.php" class="index">atrás</a>
+        <a href="/login.php" class="index">atrás</a>
     </footer>
+    <script>
+        const $registrar_alumno = document.getElementById("register_alumno");
+        const $opciones = document.querySelectorAll("#opciones");
+        $registrar_alumno.addEventListener('click', (e) => {
+            if (e.target.value) {
+                console.log(e.target)
+            }
+        })
+    </script>
 </body>
 
 </html>

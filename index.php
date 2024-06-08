@@ -45,8 +45,8 @@ if (isset($_SESSION['nombre_usuario'])) {
 
 <body>
     <main>
-        <div class="quisqueros_chats">
-            Quisqueros
+        <div class="kiosqueros_chats">
+            Kiosqueros
         </div>
         <div class="chat">
             <img src="https://media.minutouno.com/p/3a9e87392bd57010dd861992a41463f2/adjuntos/150/imagenes/026/179/0026179410/610x0/smart/juan-carlos.png" alt="" class="chat__img">

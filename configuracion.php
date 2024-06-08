@@ -44,6 +44,9 @@ if (isset($_SESSION['nombre_usuario'])) {
 </head>
 
 <body>
+    <main>
+        <a href="/logeo/cerrar_secion.php">cerrar secion</a>
+    </main>
     <?php include "./componets/navbar.php" ?>
 </body>
 

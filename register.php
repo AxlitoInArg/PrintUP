@@ -35,9 +35,24 @@
             // Insertar nuevo usuario en la base de datos
             $sql_insert = "INSERT INTO usuarios (DNI_Usuario, Nombres, Apellidos, Edad, Email, Telefono, Contrasena) VALUES ('$DNI_Usuario','$Nombres','$Apellidos', '$Edad', '$Mail', '$Telefono', '$Contrasena')";
             if (mysqli_query($conn, $sql_insert)) {
-                // Redirigir al usuario a la página de inicio
-                header("Location: ../inicio/inicio.php");
-                exit; // Finalizar el script para evitar cualquier salida adicional
+
+                if (isset($_POST['Regristrar_Alumno']) && $_POST['Regristrar_Alumno'] == "on") {
+                    $Curso = $_POST["Curso"]; // No hace falta cambiar
+                    $Preceptor = $_POST["Preceptor"]; // Cambiado de "Contrasena" a "contrasena"
+
+                    $sql_insert = "INSERT INTO `alumnos`(`FK_DNI_Usuario`, `Curso`, `Preceptor`) VALUES ('$DNI_Usuario','$Curso','$Preceptor')";
+                    if (mysqli_query($conn, $sql_insert)) {
+                        // Redirigir al usuario a la página de inicio
+                        header("Location: /login.php");
+                        exit; // Finalizar el script para evitar cualquier salida adicional
+                    } else {
+                        echo "Error en la consulta SQL: " . mysqli_error($conn);
+                    }
+                } else {
+                    // Redirigir al usuario a la página de inicio
+                    header("Location: /login.php");
+                    exit; // Finalizar el script para evitar cualquier salida adicional
+                }
             } else {
                 echo "Error en la consulta SQL: " . mysqli_error($conn);
             }
@@ -51,25 +66,40 @@
     </header>
     <main class="login-form">
         <form action="" method="POST">
-            <label for="opciones">Selecciona una opción:</label>
-            <select id="opciones" name="opciones">
-                <option value="opcion1">seleccione</option>
-                <option name value="opcion2">Alumno</option>
-                <option value="opcion4">profesor</option>
-            </select>
-            <input type="text" placeholder="DNI" required name="DNI" id="DNI">
+            <input type="number" placeholder="DNI" required name="DNI" id="DNI">
             <input type="text" placeholder="Nombre de Usuario" required name="nombre_Usuario" id="nombre_Usuario"> <!-- Corregido de "Nombres" a "nombre_Usuario" -->
             <input type="text" placeholder="Apellido" required name="apellido" id="apellido"> <!-- Corregido de "Apellidos" a "apellido" -->
-            <input type="text" placeholder="Edad" required name="edad" id="edad"> <!-- Corregido de "Edad" a "edad" -->
-            <input type="text" placeholder="Gmail" required name="Gmail" id="Gmail"> <!-- Corregido de "Email" a "Gmail" y cambiado a tipo "email" -->
-            <input type="text" placeholder="Teléfono" required name="telefono" id="telefono"> <!-- Cambiado a tipo "tel" -->
+            <input type="number" placeholder="Edad" required name="edad" id="edad"> <!-- Corregido de "Edad" a "edad" -->
+            <input type="email" placeholder="Gmail" required name="Gmail" id="Gmail"> <!-- Corregido de "Email" a "Gmail" y cambiado a tipo "email" -->
+            <input type="tel" placeholder="Teléfono" required name="telefono" id="telefono"> <!-- Cambiado a tipo "tel" -->
             <input type="password" placeholder="Contraseña" required name="contrasena" id="contrasena"> <!-- Corregido de "Contrasena" a "contrasena" -->
+
+            <label>
+                <input type="checkbox" name="Regristrar_Alumno" id="Regristrar_Alumno"> <!-- Corregido de "Contrasena" a "contrasena" -->
+                Registrarse como Alumno
+            </label>
+            <select class="opciones" name="Curso" disabled>
+                <option value="7mo 2da">7mo 2da</option>
+            </select>
+            <select class="opciones" name="Preceptor" disabled>
+                <option value="Javier Milei">Javier Milei</option>
+            </select>
             <button type="submit">Registrarse</button>
         </form>
     </main>
     <footer class="footer">
-        <a href="login.php" class="index">atrás</a>
+        <a href="/login.php" class="index">atrás</a>
     </footer>
+    <script>
+        const Regristrar_Alumno = document.getElementById("Regristrar_Alumno");
+        const elementsOpcions = document.querySelectorAll(".opciones");
+        Regristrar_Alumno.addEventListener("click", (e) => {
+            let checked = e.target.checked;
+            elementsOpcions.forEach(x => {
+                x.disabled = !checked;
+            });
+        })
+    </script>
 </body>
 
 </html>

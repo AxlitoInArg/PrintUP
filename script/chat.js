@@ -2,6 +2,16 @@ const container_mensajes = document.querySelector(".container_mensajes");
 const $mensaje_send = document.getElementById("mensaje_send")
 const $button_send = document.getElementById("button_send")
 
+let count_menssage = 0
+
+const render_componet = ({ Fecha_Hora, Mensaje, Autor }) => {
+    return /*html*/` <div class="container__mensaje ${Number(Autor) == at ? "right" : "left"}">
+                <span class="container__mensaje__text">${Mensaje}</span>
+                <!-- <span class="container__mensaje__file"></span> -->
+                <div class="triangulo_rectangulo"></div>
+                <div class="container__mensaje_fecha_hora">${Fecha_Hora.slice(0, -3)}</div>
+            </div>`}
+
 const get_message = async () => {
     try {
         const response = await fetch(`/api/get_mensages.php?emisor=${emisor}&receptor=${receptor}`);
@@ -31,19 +41,24 @@ async function send_mensaje() {
 }
 
 get_message().then(data => {
-    let component = data.map(({ Fecha_Hora, Mensaje, Autor }) => {
-        return /*html*/` <div class="container__mensaje ${Number(Autor) == at ? "right" : "left"}">
-                <span class="container__mensaje__text">${Mensaje}</span>
-                <!-- <span class="container__mensaje__file"></span> -->
-                <div class="triangulo_rectangulo"></div>
-                <div class="container__mensaje_fecha_hora">${Fecha_Hora.slice(0, -3)}</div>
-            </div>`
-    }).join("");
+    let component = data.map(render_componet).join("");
     container_mensajes.innerHTML = component
     container_mensajes.scrollTo(0, container_mensajes.scrollHeight)
+    count_menssage = data.length
+
 })
 
-
+setInterval(() => {
+    get_message().then(data => {
+        let temp_count_menssage = data.length
+        if (count_menssage !== temp_count_menssage) {
+            let component = data.map(render_componet).join("");
+            container_mensajes.innerHTML = component
+            container_mensajes.scrollTo(0, container_mensajes.scrollHeight)
+            count_menssage = data.length
+        }
+    })
+}, 2000);
 
 
 $mensaje_send.addEventListener("input", (e) => {
@@ -54,16 +69,10 @@ $button_send.addEventListener("click", async () => {
     const res = await send_mensaje()
     if (Number(res)) {
         get_message().then(data => {
-            let component = data.map(({ Fecha_Hora, Mensaje, Autor }) => {
-                return /*html*/` <div class="container__mensaje ${Number(Autor) == at ? "right" : "left"}">
-                <span class="container__mensaje__text">${Mensaje}</span>
-                <!-- <span class="container__mensaje__file"></span> -->
-                <div class="triangulo_rectangulo"></div>
-                <div class="container__mensaje_fecha_hora">${Fecha_Hora.slice(0, -3)}</div>
-            </div>`
-            }).join("");
+            let component = data.map(render_componet).join("");
             container_mensajes.innerHTML = component
             container_mensajes.scrollTo(0, container_mensajes.scrollHeight)
+            count_menssage = data.length
         })
         $mensaje_send.value = ""
         $button_send.disabled = true
@@ -71,3 +80,4 @@ $button_send.addEventListener("click", async () => {
     }
 
 })
+    

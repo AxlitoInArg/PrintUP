@@ -29,9 +29,9 @@ if ($type_user == "no_user") {
         <div class="kiosqueros_chats">
             <?php
             if ($type_user == "user_normal") {
-                echo "Clientes";
-            } else {
                 echo "Kiosqueros";
+            } else {
+                echo "Clientes";
             }
             ?>
         </div>
@@ -50,9 +50,16 @@ if ($type_user == "no_user") {
     </main>
     <?php include "./componets/navbar.php" ?>
     <script>
-        var ud = <?php echo $_SESSION['user_id']; ?>
+        var ud = <?php echo $_SESSION['user_id']. ";"; ?>
+        <?php
+        if ($type_user == "user_normal") {
+            echo "var at = 1;";
+        } else {
+            echo "var at = 0;";
+        }
+        ?>
     </script>
-    <script src="/script/show_kiosqueros.js"></script>
+    <script src="/script/show.js"></script>
 </body>
 
 </html>

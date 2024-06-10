@@ -6,7 +6,7 @@ function get_kiosqueros()
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["user_id"])) {
         $user_id = $_GET["user_id"];
         require "../libs/conn.php";
-        $sql = "SELECT u.DNI_Usuario, CONCAT(u.Nombres, ' ', u.Apellidos) AS 'Nombre_Completo', u.perfil_img, COUNT(m.ID_Mensaje) as Cantidad_Mensajes, t.Ultimo_Mensaje, t.Mensaje FROM `kiosqueros` k JOIN `usuarios` u ON k.FK_DNI_Usuario = u.DNI_Usuario LEFT JOIN `mensajes` m ON k.ID_Kiosquero = m.ID_Kiosquero AND m.FK_DNI_Usuario = '$user_id' LEFT JOIN (SELECT m.ID_Kiosquero, MAX(m.Fecha_Hora) as Ultimo_Mensaje, m.Mensaje FROM `mensajes` m WHERE m.FK_DNI_Usuario = '$user_id' GROUP BY m.Fecha_Hora DESC) t ON k.ID_Kiosquero = t.ID_Kiosquero GROUP BY k.ID_Kiosquero, u.DNI_Usuario, u.Nombres, u.Apellidos ORDER BY t.Ultimo_Mensaje DESC;";
+        $sql = "SELECT u.DNI_Usuario, CONCAT(u.Nombres, ' ', u.Apellidos) AS 'Nombre_Completo', u.perfil_img, m.Mensaje, m.Fecha_Hora as Ultimo_Mensaje FROM `usuarios` AS u JOIN `mensajes` AS m ON u.DNI_Usuario = m.FK_DNI_Usuario JOIN `kiosqueros` AS k ON m.ID_Kiosquero = k.ID_Kiosquero WHERE k.FK_DNI_Usuario = '$user_id' ORDER BY m.Fecha_Hora DESC LIMIT 1;";
         $result = mysqli_query($conn, $sql);
         // Crear un arreglo para almacenar los resultados
         $kiosqueros = array();

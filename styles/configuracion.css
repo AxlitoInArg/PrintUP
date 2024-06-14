@@ -1,0 +1,103 @@
+/* Estilos generales */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #f0f0f0; /* Color de fondo general */
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    color: royalblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para configuración */
+.configuracion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.perfil,
+.acciones {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.perfil h2,
+.acciones h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.perfil p {
+    margin-bottom: 10px;
+}
+
+.editar-perfil-link {
+    color: royalblue;
+}
+
+.editar-perfil-link:hover {
+    text-decoration: underline;
+}
+
+.acciones ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.acciones li {
+    margin-bottom: 10px;
+}
+
+.logout-link {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.logout-link:hover {
+    background-color: dodgerblue;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 600px) {
+    .logout-link {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .perfil,
+    .acciones {
+        padding: 15px;
+    }
+
+    .perfil h2,
+    .acciones h2 {
+        font-size: 20px;
+    }
+}

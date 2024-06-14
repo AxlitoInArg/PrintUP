@@ -107,8 +107,9 @@
 }
 
 .chat_container_mensagge {
-    color: rgb(179, 179, 179);
+    color: rgb(34, 34, 34);
     font-size: small;
+    height: 14.94px;
 }
 
 .chat_container div {
@@ -122,7 +123,7 @@
     font-size: small;
 }
 
-.quisqueros_chats {
+.kiosqueros_chats {
     text-align: center;
     font-size: 1.5rem;
     background-color: aliceblue;

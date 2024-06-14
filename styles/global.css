@@ -5,9 +5,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(135deg, royalblue, lightblue, turquoise);
+    background: linear-gradient(to bottom, royalblue, skyblue);
     background-size: cover;
 }
+
+body > main {
+    height: calc(100% - 54px);
+    position: relative;
+} 
 
 .navbar {
     display: flex;
@@ -70,4 +75,9 @@ body {
         /* Tamaño de texto más pequeño */
     }
 
+}
+
+a {
+    text-decoration: none;
+    color: initial;
 }

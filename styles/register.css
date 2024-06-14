@@ -1,39 +1,32 @@
 /* Asegura que todos los textos utilicen la fuente Ubuntu */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&display=swap');
 
 * {
     font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body,
-html {
+body, html {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Centra verticalmente el contenido */
     align-items: center;
     background: linear-gradient(to bottom, royalblue, skyblue);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
 }
 
-.hola {
-    width: 400px;
-    padding: 15px;
-    /* Aumenta el padding */
-    margin-top: 15px;
-    /* Aumenta el margen superior */
-    border: none;
-    border-radius: 25px;
-    background-color: rgb(40, 42, 190);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    /* Aplica negrita */
-    cursor: pointer;
+.header {
+    text-align: center;
+    margin-bottom: 10px; /* Reduce el espacio inferior */
 }
 
 .header .logo {
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 
@@ -48,111 +41,72 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 90%;
     max-width: 400px;
-    /* Ajusta el ancho máximo */
     padding: 20px;
-    /* Añade un poco de espacio alrededor del formulario */
-    margin-top: 20px;
-    /* Ajusta la distancia desde arriba */
+    margin-top: 10px; /* Reduce la distancia desde arriba */
     border-radius: 25px;
-    /* Agrega bordes redondeados */
-    background: rgba(255, 255, 255, 0.8);
-    /* Cambia el fondo a un color claro */
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Agrega una sombra */
 }
 
+.login-form input[type="number"],
 .login-form input[type="text"],
 .login-form input[type="email"],
 .login-form input[type="tel"],
-.login-form input[type="number"],
 .login-form input[type="password"],
 .login-form select {
     width: 100%;
-    /* Ajusta el ancho al 100% */
-    padding: 15px;
-    /* Aumenta el padding para alargar los campos */
-    margin-bottom: 15px;
-    /* Aumenta el margen inferior */
+    padding: 12px;
+    margin-bottom: 10px; /* Reduce el margen inferior */
     border-radius: 25px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
     font-size: 16px;
-    font-family: "Ubuntu", sans-serif;
+}
+
+.login-form label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre checkbox y label */
+    margin-bottom: 10px; /* Añadir espacio debajo del checkbox */
+}
+
+.login-form .opciones-container {
+    width: 100%;
+    display: none;
+    margin-bottom: 10px; /* Añadir espacio debajo del contenedor de opciones */
 }
 
 .login-form .forgot-password {
     display: block;
     margin-top: 10px;
     font-size: 16px;
-    /* Aumenta el tamaño del texto */
     color: royalblue;
-    /* Cambia el color del enlace */
     text-decoration: none;
 }
 
 .login-form button,
 .login-form .btn {
     width: 100%;
-    /* Ajusta el ancho al 100% */
-    padding: 15px;
-    /* Aumenta el padding */
+    padding: 12px;
+    margin-top: 10px; /* Añadir margen superior */
     border: none;
     border-radius: 25px;
     background-color: royalblue;
-    /* Cambia el color del botón */
     color: white;
-    /* Cambia el color del texto del botón */
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
-    /* Agrega una transición suave */
 }
 
 .login-form button:hover,
 .login-form .btn:hover {
     background-color: dodgerblue;
-    /* Cambia el color al pasar el mouse */
-}
-
-/* Estilo para los botones "Gmail" y "Teléfono" */
-.login-form input[type="text"][id="Email"],
-.login-form input[type="text"][id="Telefono"] {
-    width: 100%;
-    /* Ajusta el ancho al 100% */
-    padding: 15px;
-    /* Aumenta el padding */
-    margin-bottom: 15px;
-    /* Aumenta el margen inferior */
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: "Ubuntu", sans-serif;
-}
-
-.login-form input[type="text"][id="Email"]:focus,
-.login-form input[type="text"][id="Telefono"]:focus {
-    border-color: royalblue;
-    /* Cambia el color del borde al enfocar */
-}
-
-.login-form input[type="text"][id="Email"]::placeholder,
-.login-form input[type="text"][id="Telefono"]::placeholder {
-    color: #aaa;
-    /* Cambia el color del texto de marcador de posición */
-}
-
-.login-form input[type="text"][id="Email"]:hover,
-.login-form input[type="text"][id="Telefono"]:hover {
-    border-color: #999;
-    /* Cambia el color del borde al pasar el mouse */
 }
 
 .footer {
-    margin-bottom: 20px;
+    margin-top: 15px;
     text-align: center;
 }
 
@@ -166,34 +120,26 @@ html {
     cursor: pointer;
 }
 
-#opciones {
-    color: #aaa;
-}
-
-:has(#register_alumno:checked) #opciones{
-    color: black;
-}
-
 /* Media query para asegurar la responsividad */
 @media (max-width: 600px) {
     .header h1 {
         font-size: 24px;
-        /* Ajusta el tamaño del título en pantallas pequeñas */
     }
 
+    .login-form {
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .login-form input[type="number"],
     .login-form input[type="text"],
     .login-form input[type="email"],
     .login-form input[type="tel"],
-    .login-form input[type="number"],
     .login-form input[type="password"],
     .login-form select {
         font-size: 14px;
         padding: 10px;
-        /* Restaura el padding en pantallas pequeñas */
         margin-bottom: 10px;
-        /* Restaura el margen inferior en pantallas pequeñas */
-        margin-top: 10px;
-        /* Restaura el margen superior en pantallas pequeñas */
     }
 
     .login-form .forgot-password {
@@ -204,16 +150,10 @@ html {
     .login-form .btn {
         font-size: 14px;
         padding: 12px;
-        /* Ajusta el padding del botón en pantallas pequeñas */
+        margin-top: 10px;
     }
 
-    /* Estilos para los botones "Gmail" y "Teléfono" en pantallas pequeñas */
-    .login-form input[type="text"][id="Email"],
-    .login-form input[type="text"][id="Telefono"] {
+    .login-form label {
         font-size: 14px;
-        padding: 12px;
-        /* Ajusta el padding */
-        margin-bottom: 10px;
-        /* Ajusta el margen inferior */
     }
 }

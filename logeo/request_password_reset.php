@@ -18,7 +18,7 @@
             <button type="submit">Enviar enlace de recuperación</button>
         </form>
         <footer class="footer">
-        <a href="/login.php" class="index">Atrás</a>
+        <a href="../login.php" class="index">Atrás</a>
         </footer>
         <?php if (isset($_GET['error'])): ?>
             <p class="error"><?php echo htmlspecialchars($_GET['error']); ?></p>

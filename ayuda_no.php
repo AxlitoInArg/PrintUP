@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/ayuda.css">
 </head>
+<style>
+    .footer {
+    margin-top: 15px;
+    text-align: center;
+}
 
+.footer .index {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
 <body>
     <header class="header">
         <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo">
@@ -53,7 +68,9 @@
             </form>
         </section>
     </main>
-
+    <footer class="footer">
+        <a href="./login.php" class="index">Atrás</a>
+    </footer>
     <script src="/scripts/help.js"></script>
 </body>
 

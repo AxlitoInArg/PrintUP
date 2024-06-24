@@ -29,9 +29,9 @@ if ($type_user == "no_user") {
             <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo"></div>
             <?php
             if ($type_user == "user_normal") {
-                echo "para clientes";
+                echo "Notificaciones para clientes";
             } else {
-                echo "para el kiosco";
+                echo "Notificaciones para el kiosco";
             }
             ?>
         </div>

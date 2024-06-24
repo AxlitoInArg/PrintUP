@@ -1,3 +1,14 @@
+<?php
+include "./libs/obtener_tipo_usuario.php";
+session_start();
+$type_user = getUserType();
+if ($type_user == "no_user") {
+    if (basename($_SERVER['PHP_SELF']) != '' || basename($_SERVER['PHP_SELF']) != 'index.php') {
+        header("Location: login.php");
+        exit; // Salir del script después de redirigir
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,9 +24,16 @@
 </head>
 
 <body>
-    <header class="header">
-        <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo">
-    </header>
+        <div class="arriba"><div>
+            <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo"></div>
+            <?php
+            if ($type_user == "user_normal") {
+                echo "Ayuda para clientes";
+            } else {
+                echo "Ayuda para el kiosco";
+            }
+            ?>
+        </div>
     
     <main class="help-container">
         <h1>Ayuda y Soporte</h1>

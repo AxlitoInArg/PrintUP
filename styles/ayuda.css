@@ -13,8 +13,22 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-.logo {
-    width: 150px;
+.logo{
+    position: absolute;
+    height: 35px;
+    left: 4px;
+    top: 4px;
+}
+
+.arriba {
+    position: relative;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: aliceblue;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .help-container {

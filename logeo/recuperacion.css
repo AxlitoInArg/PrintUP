@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, royalblue, skyblue);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 500px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+h2 {
+    color: royalblue;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer .index {
+    color: royalblue;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer .index:hover {
+    color: darkblue;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 600px) {
+    .logo {
+        width: 200px; /* Smaller logo on mobile */
+    }
+
+    h2 {
+        font-size: 24px; /* Smaller heading on mobile */
+    }
+
+    input[type="email"], button {
+        font-size: 14px; /* Smaller input and button text on mobile */
+        padding: 8px; /* Smaller padding on mobile */
+    }
+
+    .container {
+        width: 100%; /* Full width container on mobile */
+        padding: 15px; /* Smaller padding on mobile */
+    }
+}

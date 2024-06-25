@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Contraseña correcta, iniciar sesión
             $_SESSION['email'] = $Email;
             $_SESSION['nombre_usuario'] = $row['Nombres'];
+            $_SESSION['apellido_usuario'] = $row['Apellidos'];
             $_SESSION['full_name'] = $row['full_name'];
             $_SESSION['user_id'] = $row['DNI_Usuario'];
             header("Location: index.php");

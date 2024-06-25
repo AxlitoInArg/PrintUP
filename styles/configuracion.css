@@ -120,3 +120,8 @@ a:hover {
         font-size: 20px;
     }
 }
+
+a {
+    overflow: auto;
+    max-height: calc(100v h - 100px);
+}

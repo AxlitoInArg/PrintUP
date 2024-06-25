@@ -58,7 +58,7 @@ if ($type_user == "no_user") {
         <!-- Formulario de Contacto -->
         <section class="contact-form">
             <h2>Formulario de Contacto</h2>
-            <form action="/send_contact_form.php" method="POST">
+            <form action="./send_contact_form.php" method="POST">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required>
 

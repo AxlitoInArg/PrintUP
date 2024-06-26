@@ -1,8 +1,8 @@
 <?php
 include "./libs/obtener_tipo_usuario.php";
 session_start();
-$type_user = getUserType();
-if ($type_user == "no_user") {
+$tipo_usuario = obtenerTipoUsuario();
+if ($tipo_usuario == "no_user") {
     if (basename($_SERVER['PHP_SELF']) != '' || basename($_SERVER['PHP_SELF']) != 'index.php') {
         header("Location: login.php");
         exit; // Salir del script después de redirigir
@@ -19,17 +19,19 @@ if ($type_user == "no_user") {
     <link rel="icon" href="/img/icono.png" type="image/x-icon">
     <title>Inicio - PrintUP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 
 <body>
     <main>
-        <div class="kiosqueros_chats"><div>
-            <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo"></div>
+        <div class="kiosqueros_chats">
+            <div>
+                <img src="./assets/img/logo_negro.png" alt="PrintUP Logo" class="logo">
+            </div>
             <?php
-            if ($type_user == "user_normal") {
+            if ($tipo_usuario == "user_normal") {
                 echo "para clientes";
             } else {
                 echo "para el kiosco";
@@ -51,16 +53,16 @@ if ($type_user == "no_user") {
     </main>
     <?php include "./componets/navbar.php" ?>
     <script>
-        var ud = <?php echo $_SESSION['user_id']. ";"; ?>
+        var id_usuario = <?php echo $_SESSION['user_id'] . ";"; ?>
         <?php
-        if ($type_user == "user_normal") {
-            echo "var at = 1;";
+        if ($tipo_usuario == "user_normal") {
+            echo "var tipo_usuario = 1;";
         } else {
-            echo "var at = 0;";
+            echo "var tipo_usuario = 0;";
         }
         ?>
     </script>
-    <script src="/script/show.js"></script>
+    <script src="/assets/script/mostrar_usuarios_kiosqueros.js"></script>
 </body>
 
 </html>

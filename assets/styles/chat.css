@@ -84,7 +84,7 @@
         }
     }
 
-    #button_send {
+    #boton_enviar, #archivo_enviar {
         padding: 0;
         border-radius: 10px;
         border: solid 2px rgb(42, 172, 42);
@@ -171,4 +171,10 @@
         border-left: 15px solid transparent;
         right: 20px;
     }
+}
+
+#files {
+    opacity: 0;
+    position: absolute;
+    top: 100%;
 }

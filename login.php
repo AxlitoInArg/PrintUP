@@ -43,13 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/icono.png" type="image/x-icon">
     <title>Inicio de sesión - PrintUP</title>
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/login.css">
 </head>
 
 <body>
     <header class="header">
-        <img src="img/logo.png" alt="PrintUP Logo" class="logo">
+        <img src="./assets/img/logo.png" alt="PrintUP Logo" class="logo">
     </header>
     <main class="login-form">
         <form id="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

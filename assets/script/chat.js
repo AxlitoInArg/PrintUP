@@ -18,11 +18,12 @@ const renderizarComponente = ({ Fecha_Hora, Mensaje, Autor }) => {
 const obtenerMensajes = async () => {
     try {
         const response = await fetch(`/api/obtener_mensajes.php?emisor=${emisor}&receptor=${receptor}`);
-        console.log(await response.text());
+
         const data = await response.json();
+        console.log(data);
         return data;
     } catch (error) {
-        console.log(1);
+
         return [];
     }
 }

@@ -26,7 +26,7 @@ function obtenerMensajes()
             while ($fila = mysqli_fetch_assoc($resultado)) {
                 // Consulta para obtener archivos asociados al mensaje actual
                 $id_mensaje = $fila['ID_Mensaje'];
-                $consulta_archivos = "SELECT a.Nombre_Archivo, a.Ruta_Archivo 
+                $consulta_archivos = "SELECT a.Nombre_Archivo, a.Ruta_Archivo, a.Tipo_Archivo, a.Tamano_Archivo 
                                       FROM archivos a 
                                       WHERE a.ID_Mensaje = '$id_mensaje';";
                 $resultado_archivos = mysqli_query($conn, $consulta_archivos);

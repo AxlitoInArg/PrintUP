@@ -167,36 +167,6 @@ VALUES (
         'contrasena7',
         '7777777777',
         'image.defaul.webp'
-    ),
-    (
-        8,
-        'Usuario',
-        'Ocho',
-        37,
-        'usuario8@email.com',
-        'contrasena8',
-        '8888888888',
-        'image.defaul.webp'
-    ),
-    (
-        9,
-        'Usuario',
-        'Nueve',
-        38,
-        'usuario9@email.com',
-        'contrasena9',
-        '9999999999',
-        'image.defaul.webp'
-    ),
-    (
-        10,
-        'Usuario',
-        'Diez',
-        39,
-        'usuario10@email.com',
-        'contrasena10',
-        '1010101010',
-        'image.defaul.webp'
     );
 
 -- Insertamos 2 kiosqueros (los usuarios con DNI 1 y 2)
@@ -220,6 +190,7 @@ CREATE TABLE `printup1`.`archivos` (
     `Nombre_Archivo` varchar(255) DEFAULT NULL,
     `Tipo_Archivo` varchar(50) DEFAULT NULL,
     `Tamano_Archivo` int(11) DEFAULT NULL,
+    `Ruta_Archivo` VARCHAR(255) NOT NULL,
     FOREIGN KEY (`ID_Mensaje`) REFERENCES `printup1`.`mensajes` (`ID_Mensaje`)
 );
 

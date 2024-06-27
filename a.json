@@ -1,0 +1,38 @@
+[
+    {
+        "ID_Mensaje": "39",
+        "Fecha_Hora": "2024-06-26 18:05:15",
+        "Mensaje": "Mensaje predefinido 1",
+        "Autor": "0",
+        "archivos": [
+            {
+                "Nombre_Archivo": "667c828b376c0.pdf",
+                "Ruta_Archivo": ""
+            }
+        ]
+    },
+    {
+        "ID_Mensaje": "40",
+        "Fecha_Hora": "2024-06-26 18:14:29",
+        "Mensaje": "Mensaje predefinido 3",
+        "Autor": "0",
+        "archivos": [
+            {
+                "Nombre_Archivo": "667c84b51f4b2.png",
+                "Ruta_Archivo": ""
+            }
+        ]
+    },
+    {
+        "ID_Mensaje": "41",
+        "Fecha_Hora": "2024-06-26 18:23:24",
+        "Mensaje": "Mensaje predefinido 2",
+        "Autor": "0",
+        "archivos": [
+            {
+                "Nombre_Archivo": "667c86ccb3f1a.pdf",
+                "Ruta_Archivo": ""
+            }
+        ]
+    }
+]

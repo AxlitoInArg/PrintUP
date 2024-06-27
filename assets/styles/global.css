@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(to bottom, royalblue, skyblue);
-    background-size:contain;
+    background-size: cover;
 }
 
 .navbar {

@@ -18,11 +18,12 @@
     z-index: 5;
 }
 
-.logo{
+.logo {
     position: absolute;
     height: 35px;
     left: 4px;
     top: 4px;
+
 }
 
 .content {
@@ -139,7 +140,6 @@
 }
 
 .kiosqueros_chats {
-    position: relative;
     text-align: center;
     font-size: 1.5rem;
     background-color: aliceblue;

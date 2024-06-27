@@ -1,11 +1,8 @@
 /* Estilos generales */
-body,
-html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #f0f0f0;
-    /* Color de fondo general */
+body {
+
+    justify-content: center;
+
 }
 
 .main {
@@ -30,8 +27,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     height: calc(100vh - 400px);
-    padding: 20px;
-    padding-top: 141px;
+
 }
 
 .perfil,
@@ -95,6 +91,9 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .logo {
@@ -113,7 +112,8 @@ a:hover {
 
     .perfil,
     .acciones {
-        padding: 15px;
+
+        max-width: calc(100% - 80px);
     }
 
     .perfil h2,

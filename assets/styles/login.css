@@ -71,6 +71,7 @@ html {
 .footer {
     margin-bottom: 0%;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .footer .register {
@@ -90,8 +91,11 @@ html {
 }
 
 .header .logo {
-    width: 400px;
-    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    padding: 40px;
 }
 
 /* Media query para asegurar la responsividad */
@@ -113,7 +117,7 @@ html {
     .login-form .forgot-password,
     .footer .register {
         font-size: 20px;
-        margin-bottom: 50%;
+        /* margin-bottom: 50%; */
         /* Add margin to avoid space at the bottom */
     }
 

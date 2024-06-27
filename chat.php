@@ -59,7 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["receptor"])) {
                 <span class="container__mensaje__file"></span>
                 <div class="triangulo_rectangulo"></div>
             </div> -->
+
         </main>
+        <div class="caca">
+            <button type="button" id="archivo_enviar"><label for="files">Selecionar archivos</label></button>
+            <button>Enviar</button>
+        </div>
         <footer class="container">
             <div class="container__submit_mensaje">
                 <button type="button" id="archivo_enviar"><label for="files"><i class="fa-solid fa-plus"></i></label></button>

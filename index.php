@@ -29,6 +29,7 @@ if ($tipo_usuario == "no_user") {
         <div class="kiosqueros_chats">
             <div>
                 <img src="./assets/img/logo_negro.png" alt="PrintUP Logo" class="logo">
+                
             </div>
             <?php
             if ($tipo_usuario == "user_normal") {

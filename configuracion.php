@@ -49,7 +49,7 @@ if ($type_user == "no_user") {
             <h2>Acciones</h2>
             <ul>
                 <li><a href="cambiar_contrasena.php">Cambiar Contraseña</a></li>
-                <li><a href="#">Modo oscuro</a></li>
+                <li><a href="#">Cambiar foto de perfil</a></li>
                 <li><a href="ayuda.php">Ayuda y soporte</a></li>
             </ul>
         </div>

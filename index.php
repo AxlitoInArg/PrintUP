@@ -38,6 +38,10 @@ if ($tipo_usuario == "no_user") {
             }
             ?>
         </div>
+        <div class="horario_atencion">
+            <h2>Horario de Atención</h2>
+            <p>Lunes a Viernes: 7:15am - 8:15pm</p>
+        </div>
         <div class="container_kiosqueros">
             <!-- <div class="chat">
                 <img src="/img/image.defaul.webp" alt="" class="chat__img">

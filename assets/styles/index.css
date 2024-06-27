@@ -75,6 +75,29 @@
     text-decoration: underline;
 }
 
+.horario_atencion {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.horario_atencion h2 {
+    margin: 0;
+    font-size: 24px;
+    color: royalblue;
+}
+
+.horario_atencion p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
 
 /* Media query para asegurar la responsividad */
 @media (max-width: 600px) {
@@ -147,4 +170,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    .horario_atencion {
+        padding: 15px;
+    }
+
+    .horario_atencion h2 {
+        font-size: 20px;
+    }
+
+    .horario_atencion p {
+        font-size: 16px;
+    }
 }

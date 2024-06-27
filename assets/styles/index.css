@@ -18,9 +18,12 @@
     z-index: 5;
 }
 
-.logo{
-    height: 100px;
-    
+.logo {
+    position: absolute;
+    height: 35px;
+    left: 4px;
+    top: 4px;
+
 }
 
 .content {

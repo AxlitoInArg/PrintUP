@@ -1,25 +1,45 @@
+<?php
+include "./libs/obtener_tipo_usuario.php";
+session_start();
+$type_user = obtenerTipoUsuario();
+if ($type_user == "no_user") {
+    if (basename($_SERVER['PHP_SELF']) != '' || basename($_SERVER['PHP_SELF']) != 'index.php') {
+        header("Location: login.php");
+        exit; // Salir del script después de redirigir
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/icono.png" type="image/x-icon">
+    <link rel="icon" href="img/icono.png" type="image/x-icon">
     <title>Ayuda y Soporte - PrintUP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/ayuda.css">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link rel="stylesheet" href="./assets/styles/ayuda.css">
 </head>
 
 <body>
-    <header class="header">
-        <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo">
-    </header>
-    
+    <div class="arriba">
+        <div>
+            <img src="./assets/img/logo_negro.png" alt="PrintUP Logo" class="logo">
+        </div>
+        <?php
+        if ($type_user == "user_normal") {
+            echo "Ayuda para clientes";
+        } else {
+            echo "Ayuda para el kiosco";
+        }
+        ?>
+    </div>
+
     <main class="help-container">
         <h1>Ayuda y Soporte</h1>
-        
+
         <!-- Preguntas Frecuentes -->
         <section class="faq">
             <h2>Preguntas Frecuentes</h2>
@@ -40,7 +60,7 @@
         <!-- Formulario de Contacto -->
         <section class="contact-form">
             <h2>Formulario de Contacto</h2>
-            <form action="/send_contact_form.php" method="POST">
+            <form action="./send_contact_form.php" method="POST">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required>
 

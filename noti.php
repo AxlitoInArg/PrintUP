@@ -1,7 +1,7 @@
 <?php
 include "./libs/obtener_tipo_usuario.php";
 session_start();
-$type_user = getUserType();
+$type_user = obtenerTipoUsuario();
 if ($type_user == "no_user") {
     if (basename($_SERVER['PHP_SELF']) != '' || basename($_SERVER['PHP_SELF']) != 'index.php') {
         header("Location: login.php");
@@ -19,23 +19,25 @@ if ($type_user == "no_user") {
     <link rel="icon" href="img/icono.png" type="image/x-icon">
     <title>Historial - PrintUP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 
 <body>
-<div class="arriba"><div>
-            <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo"></div>
-            <?php
-            if ($type_user == "user_normal") {
-                echo "para clientes";
-            } else {
-                echo "para el kiosco";
-            }
-            ?>
+    <div class="arriba">
+        <div>
+            <img src="./assets/img/logo_negro.png" alt="PrintUP Logo" class="logo">
         </div>
-<main></main>
+        <?php
+        if ($type_user == "user_normal") {
+            echo "Notificaciones para clientes";
+        } else {
+            echo "Notificaciones para el kiosco";
+        }
+        ?>
+    </div>
+    <main></main>
     <?php include "./componets/navbar.php" ?>
 </body>
 

@@ -52,7 +52,7 @@ function enviarMensaje()
 
         // Manejo de archivos PDF, imagen y Word
         if (isset($_FILES['pdf_files']) && is_array($_FILES['pdf_files']['name']) && !empty($_FILES['pdf_files']['name'][0])) {
-            $upload_dir = "../uploads/";
+            $upload_dir = "../assets/uploads/";
             if (!is_dir($upload_dir)) {
                 mkdir($upload_dir, 0777, true);
             }

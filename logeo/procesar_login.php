@@ -31,7 +31,7 @@
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 1) {
-            $_SESSION['email'] = $email;
+            $_SESSION['datos_usuario']['email'] = $email;
             $login_success = true;
         } else {
             $error_message = "Correo electrónico o contraseña incorrectos.";

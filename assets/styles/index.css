@@ -1,0 +1,216 @@
+.header {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.arriba {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgb(255, 255, 255);
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.logo {
+    position: fixed;
+    height: 35px;
+    left: 8px;
+    top: 13px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.news-updates,
+.support {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.news-updates h3,
+.support h3 {
+    margin-top: 0;
+    color: royalblue;
+    font-weight: bold;
+}
+
+.footer {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Arriba | Derecha | Abajo | Izquierda */
+.horario_atencion {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    margin: 20px auto 20px auto;
+    background-color: rgba(255, 255, 255, 0.939);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    border-radius: 20px;
+    padding: 20px 15px;
+    max-width: 300px;
+}
+
+.horario_atencion h2 {
+    margin: 0;
+    font-size: 24px;
+    color: royalblue;
+}
+
+.horario_atencion p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+/* Media query para asegurar la responsividad */
+@media (max-width: 600px) {
+    .footer {
+        position: static;
+        /* Asegura que el footer no se superponga con la navbar */
+        margin-top: auto;
+        /* Empuja el footer al final del contenido */
+    }
+}
+
+.chat {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    height: 80px;
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    max-width: 380px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    width: calc(100% - 20px);
+}
+
+.chat:hover {
+    background-color: #eef;
+
+}
+
+.chat__img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chat_container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 8px 16px;
+    border: rgb(223, 223, 223) 2px solid;
+    border-radius: 40px;
+    background-color: white;
+}
+
+.chat_container div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat_container_name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.chat_container_mensagge {
+    color: #666;
+    font-size: 0.875rem;
+    height: auto;
+}
+
+.chat_container_date {
+    color: #aaa;
+    font-size: 0.75rem;
+}
+
+.kiosqueros_chats {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.container_kiosqueros {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+@media (max-width: 600px) {
+    .container_kiosqueros {
+
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .horario_atencion {
+        padding: 15px;
+    }
+
+    .horario_atencion h2 {
+        font-size: 20px;
+    }
+
+    .horario_atencion p {
+        font-size: 16px;
+    }
+}

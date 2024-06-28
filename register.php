@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/register.css">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/register.css">
     <title>Registro - PrintUP</title>
 </head>
 
@@ -20,6 +20,7 @@
         $Apellidos = $_POST["apellido"];
         $Edad = $_POST["edad"];
         $Mail = $_POST["Gmail"];
+        $perfil_img = $_POST["imagen"];
         $Telefono = $_POST["telefono"];
         $Contrasena = $_POST["contrasena"];
 
@@ -29,7 +30,7 @@
         if (mysqli_num_rows($result) > 0) {
             echo "<p class='error'>El correo electrónico, DNI o teléfono ya están registrados.</p>";
         } else {
-            $sql_insert = "INSERT INTO usuarios (DNI_Usuario, Nombres, Apellidos, Edad, Email, Telefono, Contrasena) VALUES ('$DNI_Usuario','$Nombres','$Apellidos', '$Edad', '$Mail', '$Telefono', '$Contrasena')";
+            $sql_insert = "INSERT INTO usuarios (DNI_Usuario, Nombres, Apellidos, Edad, Email, Telefono, Contrasena, perfil_img) VALUES ('$DNI_Usuario','$Nombres','$Apellidos', '$Edad', '$Mail', '$Telefono', '$Contrasena', 'image.defaul.jpg')";
             if (mysqli_query($conn, $sql_insert)) {
                 if (isset($_POST['Regristrar_Alumno']) && $_POST['Regristrar_Alumno'] == "on") {
                     $Curso = $_POST["Curso"];
@@ -55,7 +56,7 @@
     ?>
 
     <header class="header">
-        <img src="img/logo.png" alt="PrintUP Logo" class="logo">
+        <img src="/assets/img/logo.png" alt="PrintUP Logo" class="logo">
     </header>
     <main class="login-form">
         <form action="" method="POST">

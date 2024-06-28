@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100%;
+}
+
+.header_chat {
+    display: flex;
+    padding: 10px 16px;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header_chat a>i {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.header_chat img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.header_chat span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.container_mensajes {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: calc(100vh - 162.39px);
+    height: 100%;
+    overflow-y: auto;
+    background-color: #f0f2f5;
+}
+
+.container__mensaje {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.container__mensaje.right {
+    align-self: flex-end;
+    background-color: #daf8e3;
+}
+
+.container__mensaje.left {
+    align-self: flex-start;
+    background-color: #ffffff;
+}
+
+
+.container__mensaje img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.triangulo_rectangulo {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.container__mensaje.right .triangulo_rectangulo {
+    border-width: 0 0 15px 15px;
+    border-color: transparent transparent #daf8e3 transparent;
+    right: -15px;
+    top: 0;
+}
+
+.container__mensaje.left .triangulo_rectangulo {
+    border-width: 15px 15px 0 0;
+    border-color: #ffffff transparent transparent transparent;
+    left: -15px;
+    top: 0;
+}
+
+.container__mensaje__text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    flex: 1;
+}
+
+.container__mensaje__file {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.container__mensaje__file span {
+    margin-right: 10px;
+}
+
+.container__mensaje__file a {
+    color: #0084ff;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.container__mensaje__file a:hover {
+    text-decoration: underline;
+}
+
+.container__mensaje_fecha_hora {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    align-self: flex-end;
+}
+
+.container__submit_mensaje {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+}
+
+.container__submit_mensaje #boton_abrir_modal {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#boton_abrir_modal[data-id="0"] {
+    color: rgb(112, 112, 112);
+}
+
+#boton_enviar,
+#archivo_enviar {
+    background-color: #0084ff;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#boton_enviar:hover,
+#archivo_enviar:hover {
+    background-color: #005bb5;
+}
+
+#boton_enviar:disabled,
+#archivo_enviar:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.container__submit_mensaje label {
+    cursor: pointer;
+}
+
+.container__submit_mensaje input[type="file"] {
+    display: none;
+}
+
+/* Estilos adicionales para el modal */
+#modalArchivo {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    z-index: 1000;
+    text-align: center;
+}
+
+#modalArchivo span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#modalArchivo button {
+    background-color: #0084ff;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modalArchivo button:hover {
+    background-color: #005bb5;
+}

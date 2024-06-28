@@ -1,0 +1,43 @@
+body {
+    display: block;
+    align-content: center;
+
+}
+
+.cambiar-foto {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    max-width:500px;
+    margin: 0 auto;
+}
+
+.cambiar-foto h2 {
+    margin: 0;
+    font-size: 24px;
+    color: royalblue;
+}
+
+.cambiar-foto form {
+    margin-top: 10px;
+}
+
+.cambiar-foto input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.cambiar-foto button {
+    background-color: royalblue;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cambiar-foto button:hover {
+    background-color: darkblue;
+}

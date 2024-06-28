@@ -1,0 +1,61 @@
+/* notificaciones.css */
+
+.notificaciones {
+    padding: 20px;
+}
+
+.notificacion {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notificacion h3 {
+    margin-top: 0;
+    color: royalblue;
+}
+
+.notificacion p {
+    margin: 5px 0;
+}
+
+.arriba {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgb(255, 255, 255);
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.logo {
+    position: fixed;
+    height: 35px;
+    left: 4px;
+    top: 4px;
+}
+
+main {
+    height: calc(100% - 43.59px - 53px);
+    margin-top: 43.59px;
+    max-height: calc(100% - 43.59px - 53px);
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.nada_pedidos {
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: solid 1px rgb(202, 202, 202);
+}

@@ -2,11 +2,17 @@ body {
     display: block;
 }
 .container {
+<<<<<<< HEAD
     height: calc(100vh - 53px);
     max-height: calc(100vh - 53px);
     overflow: auto;
     padding: 0 20px;
     align-content: center;
+=======
+    height: calc(100vh - 50px) !important;
+    overflow: auto;
+    padding: 0 20px;
+>>>>>>> 06ecccba313d4943361d07a76e1aae28aee8171c
 }
 .editar-perfil-container {
     max-width: 500px;

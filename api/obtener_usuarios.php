@@ -1,7 +1,7 @@
 <?php
 
 // if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id_usuario"])) {
-function get_kiosqueros()
+function obtenerUsuarios()
 {
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id_usuario"])) {
         $id_usuario = $_GET["id_usuario"];
@@ -11,16 +11,16 @@ function get_kiosqueros()
         // Crear un arreglo para almacenar los resultados
         $kiosqueros = array();
         // Verificar si la consulta devolvió resultados
-        if (mysqli_num_rows($result) > 0) {
+        if (mysqli_num_rows($resultado) > 0) {
             // Recorrer los resultados y agregarlos al arreglo
-            while ($row = mysqli_fetch_assoc($result)) {
-                $kiosqueros[] = $row;
+            while ($fila = mysqli_fetch_assoc($resultado)) {
+                $kiosqueros[] = $fila;
             }
         }
         return $kiosqueros;
     }
     return array();
 }
-// echo $carlos["cad"];
+
 header('Content-Type: application/json');
-echo json_encode(get_kiosqueros());
+echo json_encode(obtenerUsuarios());

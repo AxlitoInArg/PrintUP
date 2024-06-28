@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
             $sql = "UPDATE usuarios SET Imagen_Perfil ='$Imagen_Perfil' WHERE DNI_Usuario='$id_usuario'";
             if (mysqli_query($conn, $sql)) {
                 $_SESSION['datos_usuario']['Imagen_Perfil'] = $Imagen_Perfil;
-                
+
                 echo "La foto de perfil ha sido actualizada.";
                 header("Location: configuracion.php"); // Redirigir a la página de configuración
                 exit;
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/icono.png" type="image/x-icon">
     <title>Configuraciones - PrintUP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/all.min.css">
     <link rel="stylesheet" href="./assets/styles/normalize.css">
     <link rel="stylesheet" href="./assets/styles/global.css">
     <link rel="stylesheet" href="./assets/styles/cambiar_foto.css">
@@ -70,15 +70,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
 
 <body>
 
-        <div class="cambiar-foto">
-            <h2>Cambiar foto de perfil</h2>
-            <form action="cambiar_foto.php" method="POST" enctype="multipart/form-data">
-                <input type="file" name="foto_perfil" required>
-                <br/>
-                <button type="submit">Subir Foto</button>
-            </form>
-            <h2>Aviso: la resolución optima de las imagenes es 512x512</h2>
-        </div>
+    <div class="cambiar-foto">
+        <h2>Cambiar foto de perfil</h2>
+        <form action="cambiar_foto.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="foto_perfil" required>
+            <br />
+            <button type="submit">Subir Foto</button>
+        </form>
+        <h2>Aviso: la resolución optima de las imagenes es 512x512</h2>
+    </div>
     </main>
 
     <?php include "./componets/navbar.php"; ?>

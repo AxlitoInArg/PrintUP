@@ -59,3 +59,30 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: solid 1px rgb(202, 202, 202);
 }
+
+.container_boton {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.boton_abrir_modal {
+    background-color: #0084ff;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.boton_abrir_modal:hover {
+    background-color: #005bb5;
+}
+
+.boton_abrir_modal:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}

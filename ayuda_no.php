@@ -6,34 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/icono.png" type="image/x-icon">
     <title>Ayuda y Soporte - PrintUP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/ayuda.css">
+    <link rel="stylesheet" href="./assets/styles/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/ayuda.css">
 </head>
 <style>
     .footer {
-    margin-top: 15px;
-    text-align: center;
-}
+        margin-top: 15px;
+        text-align: center;
+    }
 
-.footer .index {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: royalblue;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
+    .footer .index {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: royalblue;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
 </style>
+
 <body>
     <header class="header">
         <img src="img/logo_negro.png" alt="PrintUP Logo" class="logo">
     </header>
-    
+
     <main class="help-container">
         <h1>Ayuda y Soporte</h1>
-        
+
         <!-- Preguntas Frecuentes -->
         <section class="faq">
             <h2>Preguntas Frecuentes</h2>

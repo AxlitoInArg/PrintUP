@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["receptor"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/icono.png" type="image/x-icon">
     <title>Chat - PrintUP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/all.min.css">
     <link rel="stylesheet" href="./assets/styles/normalize.css">
     <link rel="stylesheet" href="./assets/styles/global.css">
     <link rel="stylesheet" href="./assets/styles/chat.css">
@@ -101,16 +101,23 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["receptor"])) {
             <!-- Aquí van los mensajes -->
         </main>
 
-        <footer class="container">
-            <div class="container__submit_mensaje">
-                <label for="files" id="archivo_enviar">
-                    <i class="fa-solid fa-plus"></i>
+       <?php 
+       if ($tipo_usuario == "user_normal") {
+        echo "<footer class='container'>
+            <div class='container__submit_mensaje'>
+                <label for='files' id='archivo_enviar'>
+                    <i class='fa-solid fa-plus'></i>
                 </label>
-                <input type="file" id="files" name="pdf_files[]" multiple accept=".pdf,.jpeg,.png,.tiff,.gif,.bmp,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.html,.ps">
-                <button type="button" id="boton_abrir_modal" data-id="0">Selecione una opción...</button>
-                <button type="button" id="boton_enviar" disabled><i class="fa-regular fa-paper-plane"></i></button>
+                <input type='file' id='files' name='pdf_files[]' multiple accept='.pdf,.jpeg,.png,.tiff,.gif,.bmp,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.html,.ps'>
+                <button type='button' id='boton_abrir_modal' data-id='0'>Selecione una opción...</button>
+                <button type='button' id='boton_enviar' disabled><i class='fa-regular fa-paper-plane'></i></button>
             </div>
-        </footer>
+        </footer>";
+       }
+       else {
+        echo "<style>.container_mensajes {max-height: calc(100vh - 101.39px) !important;}</style>";
+       }
+       ?>
     </main>
 
     <div id="modalFondo">
@@ -132,10 +139,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["receptor"])) {
         echo "var receptor = " . json_encode($receptor) . ";";
         echo "var at = " . ($tipo_usuario == "user_normal" ? 1 : 0) . ";";
         ?>
-
-        
     </script>
-    <script src="/assets/script/chat.js"></script>
+    <script src="/assets/script/chat.js" defer></script>
 </body>
 
 </html>

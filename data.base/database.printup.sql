@@ -1,8 +1,10 @@
-DROP DATABASE `printup1`;
+DROP DATABASE `printup`;
 
-CREATE DATABASE `printup1`;
+CREATE DATABASE `printup`;
 
-CREATE TABLE `printup1`.`usuarios` (
+use `printup`
+
+CREATE TABLE `usuarios` (
     `DNI_Usuario` int(11) NOT NULL PRIMARY KEY,
     `Nombres` varchar(100) NOT NULL,
     `Apellidos` varchar(100) NOT NULL,
@@ -13,33 +15,33 @@ CREATE TABLE `printup1`.`usuarios` (
     `perfil_img` varchar(500) NOT NULL
 );
 
-CREATE TABLE `printup1`.`alumnos` (
+CREATE TABLE `alumnos` (
     `ID_Alumno` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `FK_DNI_Usuario` int(11) DEFAULT NULL,
     `Curso` varchar(50) NOT NULL,
     `Preceptor` varchar(200) NOT NULL,
-    FOREIGN KEY (`FK_DNI_Usuario`) REFERENCES `printup1`.`usuarios` (DNI_Usuario)
+    FOREIGN KEY (`FK_DNI_Usuario`) REFERENCES `usuarios` (DNI_Usuario)
 );
 
-CREATE TABLE `printup1`.`kiosqueros` (
+CREATE TABLE `kiosqueros` (
     `ID_Kiosquero` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `FK_DNI_Usuario` int(11) DEFAULT NULL,
-    FOREIGN KEY (`FK_DNI_Usuario`) REFERENCES `printup1`.`usuarios` (DNI_Usuario)
+    FOREIGN KEY (`FK_DNI_Usuario`) REFERENCES `usuarios` (DNI_Usuario)
 );
 
-CREATE TABLE `printup1`.`mensajes` (
+CREATE TABLE `mensajes` (
     `ID_Mensaje` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `FK_DNI_Usuario` int(11) DEFAULT NULL,
     `ID_Kiosquero` int(11) DEFAULT NULL,
     `Fecha_Hora` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     `Mensaje` text DEFAULT NULL,
     `Autor` BIT(1) DEFAULT NULL,
-    FOREIGN KEY (`FK_DNI_Usuario`) REFERENCES `printup1`.`usuarios` (DNI_Usuario),
-    FOREIGN KEY (`ID_Kiosquero`) REFERENCES `printup1`.`kiosqueros` (ID_Kiosquero)
+    FOREIGN KEY (`FK_DNI_Usuario`) REFERENCES `usuarios` (DNI_Usuario),
+    FOREIGN KEY (`ID_Kiosquero`) REFERENCES `kiosqueros` (ID_Kiosquero)
 );
 
 INSERT INTO
-    `printup1`.`usuarios` (
+    `usuarios` (
         `DNI_Usuario`,
         `Nombres`,
         `Apellidos`,
@@ -71,7 +73,7 @@ VALUES (
     );
 
 INSERT INTO
-    `printup1`.`alumnos` (
+    `alumnos` (
         `FK_DNI_Usuario`,
         `Curso`,
         `Preceptor`
@@ -83,12 +85,12 @@ VALUES (
     );
 
 INSERT INTO
-    `printup1`.`kiosqueros` (`FK_DNI_Usuario`)
+    `kiosqueros` (`FK_DNI_Usuario`)
 VALUES ('42931135');
 
 -- Insertamos 10 usuarios
 INSERT INTO
-    `printup1`.`usuarios` (
+    `usuarios` (
         `DNI_Usuario`,
         `Nombres`,
         `Apellidos`,
@@ -171,7 +173,7 @@ VALUES (
 
 -- Insertamos 2 kiosqueros (los usuarios con DNI 1 y 2)
 INSERT INTO
-    `printup1`.`kiosqueros` (`FK_DNI_Usuario`)
+    `kiosqueros` (`FK_DNI_Usuario`)
 VALUES (1),
     (2),
     (3),
@@ -181,17 +183,17 @@ CREATE TABLE `password_resets` (
     `token` varchar(255) NOT NULL PRIMARY KEY,
     `Email` varchar(100) NOT NULL,
     `expires` int(11) NOT NULL,
-    FOREIGN KEY (Email) REFERENCES `printup1`.`usuarios` (Email)
+    FOREIGN KEY (Email) REFERENCES `usuarios` (Email)
 );
 
-CREATE TABLE `printup1`.`archivos` (
+CREATE TABLE `archivos` (
     `ID_Archivo` int(11) NOT NULL,
     `ID_Mensaje` int(11) DEFAULT NULL,
     `Nombre_Archivo` varchar(255) DEFAULT NULL,
     `Tipo_Archivo` varchar(50) DEFAULT NULL,
     `Tamano_Archivo` int(11) DEFAULT NULL,
     `Ruta_Archivo` VARCHAR(255) NOT NULL,
-    FOREIGN KEY (`ID_Mensaje`) REFERENCES `printup1`.`mensajes` (`ID_Mensaje`)
+    FOREIGN KEY (`ID_Mensaje`) REFERENCES `mensajes` (`ID_Mensaje`)
 );
 
 -- SELECT u.DNI_Usuario, u.Nombres, u.Apellidos, COUNT(m.ID_Mensaje) as Cantidad_Mensajes

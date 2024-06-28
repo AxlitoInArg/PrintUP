@@ -125,6 +125,8 @@
     gap: 40px;
     max-height: calc(100% - 62px - 48px);
     overflow: auto;
+    background-color: blue;
+    color: yellow;
 }
 
 .container__mensaje {

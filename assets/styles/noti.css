@@ -1,0 +1,22 @@
+/* notificaciones.css */
+
+.notificaciones {
+    padding: 20px;
+}
+
+.notificacion {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notificacion h3 {
+    margin-top: 0;
+    color: royalblue;
+}
+
+.notificacion p {
+    margin: 5px 0;
+}

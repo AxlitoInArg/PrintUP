@@ -90,13 +90,6 @@ html {
     text-align: center;
 }
 
-.header .logo {
-    position: absolute;
-    left: 50%;
-    top: 80px;
-    transform: translateX(-50%);
-    padding: 40px;
-}
 
 /* Media query para asegurar la responsividad */
 @media (max-width: 600px) {

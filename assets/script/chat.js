@@ -5,14 +5,25 @@ const $files = document.getElementById("files");
 
 let contadorMensajes = 0;
 
-const renderizarComponente = ({ Fecha_Hora, Mensaje, Autor }) => {
+const renderizarComponente = ({ Fecha_Hora, Mensaje, Autor, archivos }) => {
+    let files = archivos.map(({ Nombre_Archivo, Ruta_Archivo, Tipo_Archivo, Tamano_Archivo }) => {
+        return /* html */ `
+        <div class="container__mensaje__file">
+            <span>${Nombre_Archivo} ${Tipo_Archivo}</span>
+            <span>${Tamano_Archivo}</span>
+            <a href="./assets/uploads/${Nombre_Archivo}" download><i class="fa-solid fa-download"></i></a>
+        </div>`
+    }).join("")
     return /*html*/`
-        <div class="container__mensaje ${Number(Autor) == at ? "right" : "left"}">
-            <span class="container__mensaje__text">${Mensaje}</span>
-            <!-- <span class="container__mensaje__file"></span> -->
-            <div class="triangulo_rectangulo"></div>
-            <div class="container__mensaje_fecha_hora">${Fecha_Hora.slice(0, -3)}</div>
-        </div>`;
+    <div class="container__mensaje ${Number(Autor) == at ? "right" : "left"}">
+                <img src="./assets/img/image.defaul.jpg" alt="Tu imagen de perfil">
+                <div class="container__mensaje__content">
+                    <span class="container__mensaje__text">${Mensaje}</span>
+                    ${files}
+                    <div class="container__mensaje_fecha_hora">${Fecha_Hora}</div>
+                </div>
+                <div class="triangulo_rectangulo"></div>
+            </div>`;
 }
 
 const obtenerMensajes = async () => {
@@ -20,7 +31,6 @@ const obtenerMensajes = async () => {
         const response = await fetch(`/api/obtener_mensajes.php?emisor=${emisor}&receptor=${receptor}`);
 
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
 

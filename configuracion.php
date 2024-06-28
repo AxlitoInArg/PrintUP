@@ -31,9 +31,9 @@ if ($type_user == "no_user") {
         </div>
         <?php
         if ($type_user == "user_normal") {
-            echo "Configuración para clientes";
+            echo "Configuración clientes";
         } else {
-            echo "Configuración para kiosqueros";
+            echo "Configuración kiosqueros";
         }
         ?>
     </div>

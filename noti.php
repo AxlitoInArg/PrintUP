@@ -64,9 +64,9 @@ mysqli_close($conn);
         </div>
         <?php
         if ($type_user == "user_normal") {
-            echo "Notificaciones para clientes";
+            echo "Notificaciones clientes";
         } else {
-            echo "Notificaciones para el kiosco";
+            echo "Notificaciones kiosco";
         }
         ?>
     </div>

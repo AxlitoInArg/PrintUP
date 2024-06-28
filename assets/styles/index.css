@@ -1,5 +1,5 @@
 .header {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -8,7 +8,7 @@
 .arriba {
     text-align: center;
     font-size: 1.5rem;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     padding: .5rem;
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@
 
 .news-updates,
 .support {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
@@ -56,7 +56,7 @@
 }
 
 .footer {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     padding: 10px;
     text-align: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
@@ -80,7 +80,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.939);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -165,7 +165,7 @@
 .kiosqueros_chats {
     text-align: center;
     font-size: 1.5rem;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     padding: .5rem;
     display: flex;
     justify-content: center;

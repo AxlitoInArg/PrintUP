@@ -1,3 +1,11 @@
+body {
+    display: block;
+}
+.container {
+    height: calc(100vh - 50px) !important;
+    overflow: auto;
+    padding: 0 20px;
+}
 .editar-perfil-container {
     max-width: 500px;
     margin: 20px auto;
@@ -5,6 +13,7 @@
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .editar-perfil-container h2 {

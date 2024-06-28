@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['nombre_usuario'] = $row['Nombres'];
             $_SESSION['full_name'] = $row['full_name'];
             $_SESSION['user_id'] = $row['DNI_Usuario'];
+            $_SESSION['perfil_img'] = $row['perfil_img'];
             header("Location: index.php");
             exit;
         } else {

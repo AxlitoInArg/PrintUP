@@ -69,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Eliminar cuenta y sesión
         $sql_delete = "DELETE FROM usuarios WHERE DNI_Usuario='$DNI'";
+        echo $sql_delete;
         if (mysqli_query($conn, $sql_delete)) {
             session_destroy();
             header("Location: /login.php");
@@ -96,37 +97,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+    <div class="container">
     <main class="editar-perfil-container">
         <h2>Editar Perfil</h2>
         <form action="editar_perfil.php" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($nombres); ?>" required>
-
+    
             <label for="apellido">Apellido:</label>
             <input type="text" id="apellido" name="apellido" value="<?php echo htmlspecialchars($apellidos); ?>" required>
-
+    
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email_actual); ?>" required>
-
+    
             <label for="curso">Curso:</label>
             <select id="curso" name="curso">
-                <option value="7mo 2da" <?php if ($curso == '7mo 2da') echo 'selected'; ?>>7mo 2da</option>
+                <option value="7mo 2da" <?php if ($curso == '7mo 2da')
+                    echo 'selected'; ?>>7mo 2da</option>
                 <!-- Añadir más opciones de curso según sea necesario -->
             </select>
-
+    
             <label for="preceptor">Preceptor:</label>
             <select id="preceptor" name="preceptor">
-                <option value="Javier Milei" <?php if ($preceptor == 'Javier Milei') echo 'selected'; ?>>Javier Milei</option>
+                <option value="Javier Milei" <?php if ($preceptor == 'Javier Milei')
+                    echo 'selected'; ?>>Javier Milei</option>
                 <!-- Añadir más opciones de preceptor según sea necesario -->
             </select>
-
+    
             <button type="submit">Actualizar Perfil</button>
         </form>
-
-        <form action="editar_perfil.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.');">
+    
+        <form action="editar_perfil.php" method="POST"
+            onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.');">
             <button type="submit" name="eliminar" class="eliminar-cuenta">Eliminar Cuenta</button>
         </form>
     </main>
+    </div>
+
 
     <?php include "./componets/navbar.php"; ?>
 </body>

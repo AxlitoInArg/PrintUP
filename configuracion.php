@@ -40,6 +40,7 @@ if ($type_user == "no_user") {
     <main class="configuracion-container">
         <div class="perfil">
             <h2>Perfil</h2>
+            <img src="./assets/img/<?php echo $_SESSION['perfil_img'] ?>" class="foto"></img>
             <p><strong>Nombre:</strong> <?php echo $_SESSION['full_name']; ?></p>
             <p><strong>Email:</strong> <?php echo $_SESSION['email']; ?></p>
             <a href="editar_perfil.php" class="editar-perfil-link">Editar Perfil</a>
@@ -49,12 +50,13 @@ if ($type_user == "no_user") {
             <h2>Acciones</h2>
             <ul>
                 <li><a href="cambiar_contrasena.php">Cambiar Contraseña</a></li>
-                <li><a href="#">Cambiar foto de perfil</a></li>
+                <li><a href="cambiar_foto.php">Cambiar foto de perfil</a></li>
                 <li><a href="ayuda.php">Ayuda y soporte</a></li>
+                <br/>
+                <a href="logeo/cerrar_sesion.php" class="logout-link">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a>
             </ul>
         </div>
 
-        <a href="logeo/cerrar_sesion.php" class="logout-link">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a>
     </main>
 
     <?php include "./componets/navbar.php"; ?>

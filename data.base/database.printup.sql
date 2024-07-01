@@ -66,7 +66,7 @@ VALUES (
         'kiosco',
         'PrintUp',
         '17',
-        'kiosquero.t1vl@gmail.com',
+        'kiosquero@gmail.com',
         '1234',
         '01142623361',
         'icono.png'

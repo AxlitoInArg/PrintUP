@@ -209,8 +209,9 @@ function obtener_todos_los_pedidos()
             button.addEventListener('click', () => {
                 const dataId = button.getAttribute('data-id');
                 if (localStorage.estate !== 0) {
-                    enviarMensaje(localStorage.estate, dataId)
-                    localStorage.estate = 0
+                    enviarMensaje(localStorage.estate, dataId);
+                    localStorage.estate = 0;
+                    location.reload()
                 }
 
                 $modalFondo.style.display = 'none'; // Cierra el modal después de seleccionar

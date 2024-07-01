@@ -59,29 +59,17 @@ VALUES (
         'carlos.soliz.t1vl@gmail.com',
         '1234',
         '01122529318',
-        'image.defaul.webp'
+        'image.natalia.webp'
     ),
     (
         '42931135',
-        'natalia',
-        'natalia',
+        'kiosco',
+        'PrintUp',
         '17',
-        'tamara.fernandez.t1vl@gmail.com',
+        'kiosquero.t1vl@gmail.com',
         '1234',
         '01142623361',
-        'image.natalia.webp'
-    );
-
-INSERT INTO
-    `alumnos` (
-        `FK_DNI_Usuario`,
-        `Curso`,
-        `Preceptor`
-    )
-VALUES (
-        '45931135',
-        '7mo 2da',
-        'Javier Milei'
+        'icono.png'
     );
 
 INSERT INTO `kiosqueros` (`FK_DNI_Usuario`) VALUES ('42931135');
@@ -94,7 +82,7 @@ CREATE TABLE `password_resets` (
 );
 
 CREATE TABLE `archivos` (
-    `ID_Archivo` int(11) NOT NULL,
+    `ID_Archivo` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `ID_Mensaje` int(11) DEFAULT NULL,
     `Nombre_Archivo` varchar(255) DEFAULT NULL,
     `Tipo_Archivo` varchar(50) DEFAULT NULL,
